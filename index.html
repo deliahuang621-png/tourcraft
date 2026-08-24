@@ -142,7 +142,7 @@
       <div class="sec" data-i18n="nav_sec">产品研发</div>
       <a href="#" class="active"><span class="dot"></span><span data-i18n="nav_item">三件套生成器</span></a>
     </nav>
-    <div class="side-foot" data-i18n="side_foot">v2.1 · 本地单文件工具<br>数据不出浏览器</div>
+    <div class="side-foot" data-i18n="side_foot">v2.2 · 本地单文件工具<br>数据不出浏览器</div>
   </aside>
 
   <main>
@@ -155,8 +155,12 @@
       <div class="top-right">
         <span class="badge" data-i18n="badge">AI 出稿 · 人定稿</span>
         <div class="lang-switch">
-          <button id="langZh" onclick="setLang('zh')">中文</button>
+          <button id="langZh" onclick="setLang('zh')">中</button>
           <button id="langEn" onclick="setLang('en')">EN</button>
+          <button id="langFr" onclick="setLang('fr')">FR</button>
+          <button id="langEs" onclick="setLang('es')">ES</button>
+          <button id="langDe" onclick="setLang('de')">DE</button>
+          <button id="langSv" onclick="setLang('sv')">SV</button>
         </div>
       </div>
     </header>
@@ -258,7 +262,7 @@
     </div>
 
     <footer class="main-foot" data-i18n="footer">
-      线路匠心 TourCraft v2.1 · 本地单文件工具，数据不出浏览器 · 工作流：需求 → AI 出稿 → 人定稿（AI 负责 90% 共性劳动，定制师负责 10% 经验判断）
+      线路匠心 TourCraft v2.2 · 本地单文件工具，数据不出浏览器 · 工作流：需求 → AI 出稿 → 人定稿（AI 负责 90% 共性劳动，定制师负责 10% 经验判断）
     </footer>
   </main>
 </div>
@@ -270,7 +274,7 @@ var I18N = {
     title:'线路匠心 TourCraft · 游学三件套生成器',
     brand:'线路匠心',
     nav_sec:'产品研发', nav_item:'三件套生成器',
-    side_foot:'v2.1 · 本地单文件工具<br>数据不出浏览器',
+    side_foot:'v2.2 · 本地单文件工具<br>数据不出浏览器',
     crumb:'产品研发 / 三件套生成器',
     h1:'游学三件套生成器',
     subtitle:'输入线路需求 → 生成专业主提示词 → 粘贴到 Kimi / ChatGPT / Claude → 输出「行程方案 + 成本报价表 + 招生详情页」三件套',
@@ -302,7 +306,7 @@ var I18N = {
     btn_gen:'生成主提示词', btn_demo:'填入示例', btn_copy:'复制提示词', btn_copied:'已复制 ✓',
     hint:'输出为三件套：<span class="tag">A 行程方案</span><span class="tag">B 成本报价表</span><span class="tag">C 招生详情页</span><br><b>使用提示：</b>所有价格和资源信息 AI 只能给参考区间，交付前务必人工核实地接、酒店、门票的实时价格——提示词里已要求 AI 标注「需人工核实」项。',
     hint_copied:'<b>已复制 ✓</b> 现在粘贴到 Kimi / ChatGPT / Claude 发送即可。',
-    footer:'线路匠心 TourCraft v2.1 · 本地单文件工具，数据不出浏览器 · 工作流：需求 → AI 出稿 → 人定稿（AI 负责 90% 共性劳动，定制师负责 10% 经验判断）',
+    footer:'线路匠心 TourCraft v2.2 · 本地单文件工具，数据不出浏览器 · 工作流：需求 → AI 出稿 → 人定稿（AI 负责 90% 共性劳动，定制师负责 10% 经验判断）',
     alert_missing:'请补充必填项：', alert_nogen:'请先生成主提示词',
     f_dest:'目的地', f_days:'出行天数', f_age:'学生年龄段', f_size:'团队规模'
   },
@@ -310,7 +314,7 @@ var I18N = {
     title:'TourCraft · Study Tour 3-Piece Kit Generator',
     brand:'TourCraft',
     nav_sec:'PRODUCT R&D', nav_item:'3-Piece Kit Generator',
-    side_foot:'v2.1 · Single-file local tool<br>Data never leaves your browser',
+    side_foot:'v2.2 · Single-file local tool<br>Data never leaves your browser',
     crumb:'Product R&D / 3-Piece Kit Generator',
     h1:'Study Tour 3-Piece Kit Generator',
     subtitle:'Enter tour requirements → generate a professional master prompt → paste into Kimi / ChatGPT / Claude → get the full kit: itinerary + cost & pricing sheet + enrollment landing page',
@@ -342,16 +346,180 @@ var I18N = {
     btn_gen:'Generate Master Prompt', btn_demo:'Fill Example', btn_copy:'Copy Prompt', btn_copied:'Copied ✓',
     hint:'Output is a 3-piece kit: <span class="tag">A Itinerary</span><span class="tag">B Cost & Pricing Sheet</span><span class="tag">C Enrollment Landing Page</span><br><b>Note:</b> AI can only give reference ranges for prices and availability — always verify ground operator, hotel and ticket prices before delivery. The prompt already requires the AI to flag all "needs manual verification" items.',
     hint_copied:'<b>Copied ✓</b> Now paste it into Kimi / ChatGPT / Claude and send.',
-    footer:'TourCraft v2.1 · Single-file local tool, data never leaves your browser · Workflow: requirements → AI draft → human final (AI does 90% of the common labor; the designer owns the 10% that takes experience)',
+    footer:'TourCraft v2.2 · Single-file local tool, data never leaves your browser · Workflow: requirements → AI draft → human final (AI does 90% of the common labor; the designer owns the 10% that takes experience)',
     alert_missing:'Please complete required fields: ', alert_nogen:'Please generate the master prompt first',
     f_dest:'Destination', f_days:'Duration', f_age:'Student age', f_size:'Group size'
+  },
+  fr: {
+    title:"TourCraft · Générateur de kit 3-en-1 pour voyages scolaires",
+    brand:"TourCraft",
+    nav_sec:"R&D PRODUIT", nav_item:"Générateur de kit 3-en-1",
+    side_foot:"v2.2 · Outil local monofichier<br>Les données ne quittent pas votre navigateur",
+    crumb:"R&D Produit / Générateur de kit 3-en-1",
+    h1:"Générateur de kit 3-en-1 pour voyages scolaires",
+    subtitle:"Saisissez les besoins du voyage → générez un prompt maître professionnel → collez-le dans Kimi / ChatGPT / Claude → obtenez le kit complet : itinéraire + grille de coûts et tarifs + page d'inscription",
+    badge:"L'IA rédige · L'humain finalise",
+    step1:"Remplissez les besoins du voyage à gauche (<span style=\"color:#d92d20\">*</span> = obligatoire ; plus c'est précis, meilleur est le résultat)",
+    step2:"Cliquez sur « Générer le prompt maître », puis copiez le résultat à droite",
+    step3:"Collez-le dans n'importe quel LLM et envoyez ; obtenez un premier jet en 1–3 minutes, puis affinez à la main avant livraison",
+    form_h2:"Besoins du voyage", form_sub:"12 champs en 4 groupes · * obligatoire",
+    out_h2:"Prompt maître", out_sub:"Copiez, puis collez dans un LLM et envoyez",
+    fs1:"Informations de base", fs2:"Groupe & budget", fs3:"Standards & exigences", fs4:"Marque & remarques",
+    lb_dest:"Destination (pays / ville)", lb_days:"Durée", lb_when:"Dates prévues",
+    lb_age:"Âge / niveau des élèves", lb_size:"Taille du groupe (élèves)", lb_theme:"Thème du voyage",
+    lb_from:"Ville de départ", lb_budget:"Budget par personne (CNY)",
+    lb_hotel:"Standard hébergement & repas", lb_special:"Exigences particulières (sécurité / encadrement / programme / régime, etc.)",
+    lb_brand:"Nom de l'organisme & ton de marque (pour la page d'inscription)",
+    lb_extra:"Remarques (ressources existantes / partenaires / éléments à inclure ou exclure)",
+    ph_dest:"ex. Singapour / Londres+Cambridge / Tokyo",
+    ph_days:"ex. 7 jours 6 nuits", ph_when:"ex. Vacances d'hiver 2027 / Été session 2",
+    ph_age:"ex. 10–13 ans / fin de primaire", ph_size:"ex. 30 élèves",
+    ph_from:"ex. Pékin / Shanghai / Canton", ph_budget:"ex. 25 000–35 000",
+    ph_hotel:"ex. Hôtel 4* chambre double / famille d'accueil / dortoir ; petit-déj inclus, 2 dîners libres",
+    ph_special:"ex. Accompagnateur chinois pendant tout le séjour ; cours préparatoire + présentation finale ; 2 élèves halal ; inclure 1 journée complète de visite d'université",
+    ph_brand:"ex. XX Voyages Internationaux — ton professionnel et rigoureux / familial et vivant",
+    ph_extra:"ex. Réceptif local déjà partenaire ; vols internationaux non inclus ; aucun arrêt shopping ; inclure 1 nuit en famille d'accueil",
+    ph_output:"Remplissez les besoins à gauche, puis cliquez sur « Générer le prompt maître »…",
+    th_stem:"Voyage STEM", th_language:"Immersion linguistique / mini-séjour", th_culture:"Histoire & culture",
+    th_school:"Visites d'écoles prestigieuses / valorisation académique", th_art:"Arts / musique / théâtre", th_sports:"Sports / camp de plein air",
+    th_family:"Voyage parent-enfant", th_other:"Autre (préciser dans les remarques)",
+    btn_gen:"Générer le prompt maître", btn_demo:"Remplir un exemple", btn_copy:"Copier le prompt", btn_copied:"Copié ✓",
+    hint:"Le kit comprend : <span class=\"tag\">A Itinéraire</span><span class=\"tag\">B Grille de coûts & tarifs</span><span class=\"tag\">C Page d'inscription</span><br><b>Note :</b> l'IA ne donne que des fourchettes indicatives pour les prix et disponibilités — vérifiez toujours les tarifs réels avant livraison. Le prompt exige déjà que l'IA signale les éléments « à vérifier manuellement ».",
+    hint_copied:"<b>Copié ✓</b> Collez-le maintenant dans Kimi / ChatGPT / Claude et envoyez.",
+    footer:"TourCraft v2.2 · Outil local monofichier, les données ne quittent pas votre navigateur · Flux : besoins → brouillon IA → validation humaine (l'IA fait 90 % du travail courant, le concepteur garde les 10 % qui demandent de l'expérience)",
+    alert_missing:"Veuillez compléter les champs obligatoires : ", alert_nogen:"Veuillez d'abord générer le prompt maître",
+    f_dest:"Destination", f_days:"Durée", f_age:"Âge des élèves", f_size:"Taille du groupe"
+  },
+  es: {
+    title:'TourCraft · Generador del kit 3 en 1 para viajes de estudios',
+    brand:'TourCraft',
+    nav_sec:'I+D DE PRODUCTO', nav_item:'Generador de kit 3 en 1',
+    side_foot:'v2.2 · Herramienta local de un solo archivo<br>Los datos no salen de tu navegador',
+    crumb:'I+D de producto / Generador de kit 3 en 1',
+    h1:'Generador del kit 3 en 1 para viajes de estudios',
+    subtitle:'Introduce los requisitos del viaje → genera un prompt maestro profesional → pégalo en Kimi / ChatGPT / Claude → obtén el kit completo: itinerario + hoja de costes y precios + página de inscripción',
+    badge:'La IA redacta · El humano finaliza',
+    step1:'Rellena los requisitos del viaje a la izquierda (<span style="color:#d92d20">*</span> = obligatorio; cuanto más específico, mejor resultado)',
+    step2:'Haz clic en «Generar prompt maestro» y copia el resultado a la derecha',
+    step3:'Pégalo en cualquier chat de LLM y envía; obtendrás un borrador en 1–3 minutos para pulir a mano antes de entregar',
+    form_h2:'Requisitos del viaje', form_sub:'12 campos en 4 grupos · * obligatorio',
+    out_h2:'Prompt maestro', out_sub:'Copia, pega en un chat de LLM y envía',
+    fs1:'Datos básicos', fs2:'Grupo y presupuesto', fs3:'Estándares y requisitos', fs4:'Marca y notas',
+    lb_dest:'Destino (país / ciudad)', lb_days:'Duración', lb_when:'Fechas previstas',
+    lb_age:'Edad / curso de los alumnos', lb_size:'Tamaño del grupo (alumnos)', lb_theme:'Tema del viaje',
+    lb_from:'Ciudad de salida', lb_budget:'Presupuesto por persona (CNY)',
+    lb_hotel:'Estándar de alojamiento y comidas', lb_special:'Requisitos especiales (seguridad / personal / programa / dieta, etc.)',
+    lb_brand:'Nombre de la organización y tono de marca (para la página de inscripción)',
+    lb_extra:'Notas adicionales (recursos existentes / socios / elementos que incluir o excluir)',
+    ph_dest:'ej. Singapur / Londres+Cambridge / Tokio',
+    ph_days:'ej. 7 días 6 noches', ph_when:'ej. Vacaciones de invierno 2027 / Verano sesión 2',
+    ph_age:'ej. 10–13 años / primaria superior', ph_size:'ej. 30 alumnos',
+    ph_from:'ej. Pekín / Shanghái / Cantón', ph_budget:'ej. 25.000–35.000',
+    ph_hotel:'ej. Hotel 4* habitación doble / familia anfitriona / dormitorios; desayuno incluido, 2 cenas libres',
+    ph_special:'ej. Guía chino durante todo el viaje; curso previo + presentación final; 2 alumnos halal; incluir 1 día completo de visita universitaria',
+    ph_brand:'ej. XX Viajes Internacionales — tono profesional y riguroso / familiar y animado',
+    ph_extra:'ej. Receptivo local ya contratado; vuelos internacionales no incluidos; sin paradas de compras; incluir 1 noche en familia',
+    ph_output:'Rellena los requisitos a la izquierda y haz clic en «Generar prompt maestro»…',
+    th_stem:'Viaje STEM', th_language:'Inmersión lingüística / mini-estancia', th_culture:'Historia y cultura',
+    th_school:'Visitas a escuelas de élite / perfil académico', th_art:'Arte / música / teatro', th_sports:'Deportes / campamento al aire libre',
+    th_family:'Viaje padres e hijos', th_other:'Otro (describir en las notas)',
+    btn_gen:'Generar prompt maestro', btn_demo:'Rellenar ejemplo', btn_copy:'Copiar prompt', btn_copied:'Copiado ✓',
+    hint:'El kit incluye: <span class="tag">A Itinerario</span><span class="tag">B Hoja de costes y precios</span><span class="tag">C Página de inscripción</span><br><b>Nota:</b> la IA solo da rangos de referencia para precios y disponibilidad — verifica siempre los precios reales antes de entregar. El prompt ya exige que la IA marque los elementos «pendientes de verificación manual».',
+    hint_copied:'<b>Copiado ✓</b> Ahora pégalo en Kimi / ChatGPT / Claude y envía.',
+    footer:'TourCraft v2.2 · Herramienta local de un solo archivo, los datos no salen de tu navegador · Flujo: requisitos → borrador de IA → versión final humana (la IA hace el 90 % del trabajo común, el diseñador el 10 % que requiere experiencia)',
+    alert_missing:'Completa los campos obligatorios: ', alert_nogen:'Genera primero el prompt maestro',
+    f_dest:'Destino', f_days:'Duración', f_age:'Edad de los alumnos', f_size:'Tamaño del grupo'
+  },
+  de: {
+    title:'TourCraft · 3-teiliger Kit-Generator für Studienreisen',
+    brand:'TourCraft',
+    nav_sec:'PRODUKTENTWICKLUNG', nav_item:'3-teiliger Kit-Generator',
+    side_foot:'v2.2 · Lokales Ein-Datei-Tool<br>Daten verlassen den Browser nicht',
+    crumb:'Produktentwicklung / 3-teiliger Kit-Generator',
+    h1:'3-teiliger Kit-Generator für Studienreisen',
+    subtitle:'Anforderungen eingeben → professionellen Master-Prompt erzeugen → in Kimi / ChatGPT / Claude einfügen → komplettes Kit erhalten: Reiseplan + Kosten- & Preisliste + Anmeldeseite',
+    badge:'KI entwirft · Mensch finalisiert',
+    step1:'Links die Reiseanforderungen ausfüllen (<span style="color:#d92d20">*</span> = Pflichtfeld; je konkreter, desto besser das Ergebnis)',
+    step2:'Auf „Master-Prompt generieren“ klicken und das Ergebnis rechts kopieren',
+    step3:'In einen beliebigen LLM-Chat einfügen und senden; in 1–3 Minuten liegt ein Entwurf vor, der vor Übergabe manuell verfeinert wird',
+    form_h2:'Reiseanforderungen', form_sub:'12 Felder in 4 Gruppen · * Pflichtfeld',
+    out_h2:'Master-Prompt', out_sub:'Kopieren, in einen LLM-Chat einfügen und senden',
+    fs1:'Grunddaten', fs2:'Gruppe & Budget', fs3:'Standards & Anforderungen', fs4:'Marke & Hinweise',
+    lb_dest:'Reiseziel (Land / Stadt)', lb_days:'Dauer', lb_when:'Geplante Reisezeit',
+    lb_age:'Alter / Klassenstufe der Schüler', lb_size:'Gruppengröße (Schüler)', lb_theme:'Reisethema',
+    lb_from:'Abflugstadt', lb_budget:'Budget pro Person (CNY)',
+    lb_hotel:'Standard Unterkunft & Verpflegung', lb_special:'Besondere Anforderungen (Sicherheit / Betreuung / Curriculum / Ernährung usw.)',
+    lb_brand:'Name & Tonalität des Anbieters (für die Texte der Anmeldeseite)',
+    lb_extra:'Zusätzliche Hinweise (vorhandene Ressourcen / Partner / Punkte, die enthalten oder ausgeschlossen sein müssen)',
+    ph_dest:'z. B. Singapur / London+Cambridge / Tokio',
+    ph_days:'z. B. 7 Tage 6 Nächte', ph_when:'z. B. Winterferien 2027 / Sommer Kurs 2',
+    ph_age:'z. B. 10–13 Jahre / obere Grundschule', ph_size:'z. B. 30 Schüler',
+    ph_from:'z. B. Peking / Shanghai / Guangzhou', ph_budget:'z. B. 25.000–35.000',
+    ph_hotel:'z. B. 4-Sterne-Doppelzimmer / Gastfamilie / Camp-Unterkunft; Frühstück inklusive, 2 Abendessen frei',
+    ph_special:'z. B. Chinesische Reiseleitung durchgehend; Vorbereitungskurs + Abschlusspräsentation; 2 Schüler halal; 1 ganztägiger Universitätsbesuch Pflicht',
+    ph_brand:'z. B. XX International Tours — professionell und seriös / lebhaft familiär',
+    ph_extra:'z. B. Lokale DMC-Partnerschaft besteht; internationale Flüge nicht enthalten; keine Shopping-Stopps; 1 Nacht Gastfamilie einplanen',
+    ph_output:'Links die Anforderungen ausfüllen, dann auf „Master-Prompt generieren“ klicken…',
+    th_stem:'MINT-Studienreise', th_language:'Sprachimmersion / Mini-Auslandsaufenthalt', th_culture:'Geschichte & Kultur',
+    th_school:'Eliteschul-Besuche / akademisches Profil', th_art:'Kunst / Musik / Theater', th_sports:'Sport / Outdoor-Camp',
+    th_family:'Eltern-Kind-Reise', th_other:'Sonstiges (in den Hinweisen beschreiben)',
+    btn_gen:'Master-Prompt generieren', btn_demo:'Beispiel ausfüllen', btn_copy:'Prompt kopieren', btn_copied:'Kopiert ✓',
+    hint:'Das Kit umfasst: <span class="tag">A Reiseplan</span><span class="tag">B Kosten- & Preisliste</span><span class="tag">C Anmeldeseite</span><br><b>Hinweis:</b> Die KI liefert nur Richtwerte für Preise und Verfügbarkeit — prüfen Sie vor Übergabe immer die aktuellen Preise. Der Prompt verlangt bereits, dass die KI alle Punkte als „manuell zu prüfen“ kennzeichnet.',
+    hint_copied:'<b>Kopiert ✓</b> Jetzt in Kimi / ChatGPT / Claude einfügen und senden.',
+    footer:'TourCraft v2.2 · Lokales Ein-Datei-Tool, Daten verlassen den Browser nicht · Workflow: Anforderungen → KI-Entwurf → menschliche Endfassung (die KI übernimmt 90 % der Routine, der Designer die 10 % Erfahrungssache)',
+    alert_missing:'Bitte Pflichtfelder ausfüllen: ', alert_nogen:'Bitte zuerst den Master-Prompt generieren',
+    f_dest:'Reiseziel', f_days:'Dauer', f_age:'Schüleralter', f_size:'Gruppengröße'
+  },
+  sv: {
+    title:'TourCraft · 3-i-1-generator för studieresor',
+    brand:'TourCraft',
+    nav_sec:'PRODUKTUTVECKLING', nav_item:'3-i-1-generator',
+    side_foot:'v2.2 · Lokalt verktyg i en fil<br>Data lämnar aldrig webbläsaren',
+    crumb:'Produktutveckling / 3-i-1-generator',
+    h1:'3-i-1-generator för studieresor',
+    subtitle:'Ange resans krav → generera en professionell huvudprompt → klistra in i Kimi / ChatGPT / Claude → få hela kitet: resplan + kostnads- och prisblad + anmälningssida',
+    badge:'AI utformar · Människa färdigställer',
+    step1:'Fyll i resans krav till vänster (<span style="color:#d92d20">*</span> = obligatoriskt; ju mer specifikt, desto bättre resultat)',
+    step2:'Klicka på "Generera huvudprompt" och kopiera resultatet till höger',
+    step3:'Klistra in i valfri LLM-chatt och skicka; ett utkast klart på 1–3 minuter, finslipa manuellt före leverans',
+    form_h2:'Resans krav', form_sub:'12 fält i 4 grupper · * obligatoriskt',
+    out_h2:'Huvudprompt', out_sub:'Kopiera, klistra in i en LLM-chatt och skicka',
+    fs1:'Grunduppgifter', fs2:'Grupp & budget', fs3:'Standard & krav', fs4:'Varumärke & anteckningar',
+    lb_dest:'Destination (land / stad)', lb_days:'Längd', lb_when:'Planerade resdatum',
+    lb_age:'Elevernas ålder / årskurs', lb_size:'Gruppstorlek (elever)', lb_theme:'Resans tema',
+    lb_from:'Avresestad', lb_budget:'Budget per person (CNY)',
+    lb_hotel:'Standard för boende & måltider', lb_special:'Särskilda krav (säkerhet / personal / program / kost, m.m.)',
+    lb_brand:'Organisationens namn & tonalitet (för anmälningssidans texter)',
+    lb_extra:'Ytterligare anteckningar (befintliga resurser / partners / saker som måste ingå eller uteslutas)',
+    ph_dest:'t.ex. Singapore / London+Cambridge / Tokyo',
+    ph_days:'t.ex. 7 dagar 6 nätter', ph_when:'t.ex. Sportlov 2027 / Sommar period 2',
+    ph_age:'t.ex. 10–13 år / högstadiet', ph_size:'t.ex. 30 elever',
+    ph_from:'t.ex. Peking / Shanghai / Guangzhou', ph_budget:'t.ex. 25 000–35 000',
+    ph_hotel:'t.ex. 4-stjärnigt dubbelrum / värdfamilj / lägerboende; frukost ingår, 2 middagar på egen hand',
+    ph_special:'t.ex. Kinesisk reseledare under hela resan; förberedande kurs + avslutande presentation; 2 elever halal; inkludera 1 heldags universitetsbesök',
+    ph_brand:'t.ex. XX International Tours — professionell och seriös / livlig familjestil',
+    ph_extra:'t.ex. Lokal DMC-partner finns; internationella flyg ingår ej; inga shoppingstopp; inkludera 1 natt i värdfamilj',
+    ph_output:'Fyll i kraven till vänster och klicka på "Generera huvudprompt"…',
+    th_stem:'STEM-studieresa', th_language:'Språkimmersion / mini-utlandsvistelse', th_culture:'Historia & kultur',
+    th_school:'Besök på elitskolor / akademisk profil', th_art:'Konst / musik / teater', th_sports:'Sport / friluftsläger',
+    th_family:'Förälder-barn-resa', th_other:'Annat (beskriv i anteckningarna)',
+    btn_gen:'Generera huvudprompt', btn_demo:'Fyll i exempel', btn_copy:'Kopiera prompt', btn_copied:'Kopierad ✓',
+    hint:'Kitet innehåller: <span class="tag">A Resplan</span><span class="tag">B Kostnads- & prisblad</span><span class="tag">C Anmälningssida</span><br><b>Obs:</b> AI ger bara referensintervall för priser och tillgänglighet — kontrollera alltid aktuella priser före leverans. Prompten kräver redan att AI:n markerar allt som "behöver manuell verifiering".',
+    hint_copied:'<b>Kopierad ✓</b> Klistra nu in i Kimi / ChatGPT / Claude och skicka.',
+    footer:'TourCraft v2.2 · Lokalt verktyg i en fil, data lämnar aldrig webbläsaren · Arbetsflöde: krav → AI-utkast → mänsklig slutversion (AI gör 90 % av rutinarbetet, designern de 10 % som kräver erfarenhet)',
+    alert_missing:'Fyll i obligatoriska fält: ', alert_nogen:'Generera huvudprompten först',
+    f_dest:'Destination', f_days:'Längd', f_age:'Elevernas ålder', f_size:'Gruppstorlek'
   }
 };
 
+var LANGS = ['zh','en','fr','es','de','sv'];
 var lang = (function(){
   var q = new URLSearchParams(location.search).get('lang');
-  if(q === 'en' || q === 'zh'){ try{ localStorage.setItem('tc-lang', q); }catch(e){} return q; }
-  try{ return localStorage.getItem('tc-lang') || 'zh'; }catch(e){ return 'zh'; }
+  if(LANGS.indexOf(q) > -1){ try{ localStorage.setItem('tc-lang', q); }catch(e){} return q; }
+  try{
+    var s = localStorage.getItem('tc-lang');
+    return (LANGS.indexOf(s) > -1) ? s : 'zh';
+  }catch(e){ return 'zh'; }
 })();
 
 function t(k){ return I18N[lang][k] || I18N.zh[k] || k; }
@@ -367,8 +535,10 @@ function applyLang(){
   document.title = t('title');
   document.querySelectorAll('[data-i18n]').forEach(function(el){ el.innerHTML = t(el.getAttribute('data-i18n')); });
   document.querySelectorAll('[data-i18n-ph]').forEach(function(el){ el.placeholder = t(el.getAttribute('data-i18n-ph')); });
-  document.getElementById('langZh').classList.toggle('on', lang === 'zh');
-  document.getElementById('langEn').classList.toggle('on', lang === 'en');
+  ['zh','en','fr','es','de','sv'].forEach(function(l){
+    var btn = document.getElementById('lang' + l.charAt(0).toUpperCase() + l.slice(1));
+    if(btn) btn.classList.toggle('on', lang === l);
+  });
 }
 
 function v(id){ return document.getElementById(id).value.trim(); }
@@ -438,6 +608,190 @@ function buildPrompt(d){
     p += '1. 三个部分用「---」分隔，完整输出，不要省略。\n';
     p += '2. 所有不确定的实时信息（价格、开放状态、预约要求）一律给参考区间并标注【需人工核实】，不得编造确切数字。\n';
     p += '3. 如果某项需求信息不足且影响设计质量，先列出你需要我补充的问题（最多5个），再基于合理假设给出初稿。\n';
+    return p;
+  }
+
+  if(lang === 'fr'){
+    var p = '';
+    p += "# Rôle\n";
+    p += "Vous êtes un directeur de produit voyages scolaires fort de 15 ans d'expérience dans le voyage éducatif international, expert en conception de séjours, calcul des coûts et marketing d'inscription. Vos programmes sont réputés pour être structurés comme de véritables cursus, sûrs et producteurs de résultats tangibles pour les élèves. Vous avez accompagné des dizaines d'organismes.\n\n";
+    p += "# Mission\n";
+    p += "À partir des besoins ci-dessous, produisez un kit complet de développement produit en 3 volets pour un voyage scolaire : (A) programme jour par jour, (B) grille de coûts et tarifs, (C) brouillon de page d'inscription. Répondez entièrement en français.\n\n";
+    p += "# Besoins\n";
+    p += "- Destination : " + d.dest + "\n";
+    p += "- Durée : " + d.days + "\n";
+    if(d.when) p += "- Dates prévues : " + d.when + "\n";
+    p += "- Âge des élèves : " + d.age + "\n";
+    p += "- Taille du groupe : " + d.size + " élèves\n";
+    p += "- Thème : " + d.theme + "\n";
+    if(d.from) p += "- Ville de départ : " + d.from + "\n";
+    if(d.budget) p += "- Budget par personne : " + d.budget + " CNY\n";
+    if(d.hotel) p += "- Standard hébergement & repas : " + d.hotel + "\n";
+    if(d.special) p += "- Exigences particulières : " + d.special + "\n";
+    if(d.brand) p += "- Organisme & ton : " + d.brand + "\n";
+    if(d.extra) p += "- Remarques : " + d.extra + "\n";
+    p += "\n";
+    p += "# A. Programme (jour par jour)\n";
+    p += "Exigences :\n";
+    p += "1. Jour par jour : date / ville / matin / après-midi / soir, avec un [Objectif pédagogique] pour chaque étape (ce que les élèves apprennent et produisent ce jour-là).\n";
+    p += "2. Conception curriculaire : boucle d'apprentissage complète — préparation (sessions en ligne avant le départ) → exploration sur place (fiches de mission quotidiennes / carnet de bord) → production finale (présentation de clôture / rapport / certificat).\n";
+    p += "3. Rythme raisonnable : 3 activités principales maximum par jour, pas de course aux cases ; pas d'activités lourdes les jours de transfert ; préciser le mode de transport et la durée estimée de chaque trajet.\n";
+    p += "4. Adaptation à l'âge : activités, intensité de marche et profondeur des contenus adaptées à la tranche d'âge.\n";
+    p += "5. Encadrement : ratios et rôles (accompagnateur chinois, mentors locaux, assistants) — au moins 1:8 pour les 12 ans et moins, 1:10 pour les 13 ans et plus.\n";
+    p += "6. Sécurité : lister 5–8 points de sécurité et d'urgence propres à la destination et à l'âge (médical, enfants perdus, alimentation, météo, documents).\n\n";
+    p += "# B. Grille de coûts et tarifs\n";
+    p += "Exigences :\n";
+    p += "1. Tableau Markdown avec les postes : vols internationaux (le cas échéant), visa & démarches, hébergement, repas, transport local, billets & activités, programme & enseignants, quote-part accompagnateurs & staff, assurance voyage, matériel & carnet de bord, divers.\n";
+    p += "2. Chaque ligne : fourchette de coût estimée (CNY/personne), base de calcul, et mention [À VÉRIFIER MANUELLEMENT] — obligatoire pour tout prix en temps réel (vols, hôtels, billets, postes sensibles au change).\n";
+    p += "3. Synthèse : coût total par personne → prix de vente conseillé avec marge brute 18 %–25 % → tarification à deux niveaux (early-bird / standard).\n";
+    p += "4. Si un poste est exclu (ex. vols internationaux), le lister séparément en fourchette indicative, hors total.\n\n";
+    p += "# C. Brouillon de page d'inscription\n";
+    p += "Exigences :\n";
+    p += "1. Structure : titre + sous-titre / 3–4 points forts (axés valeur éducative, sans adjectifs creux) / tableau récapitulatif du programme / acquis des élèves (compétences + livrables concrets) / sécurité & encadrement / ce que le tarif inclut et n'inclut pas / modalités d'inscription (âge, effectif, date limite, règles d'annulation à compléter).\n";
+    p += "2. Ton adapté à la marque ; écrit pour des parents sur mobile, répondant à leurs trois questions : qu'apprendra mon enfant, est-ce sûr, cela vaut-il le prix.\n";
+    p += "3. Aucune formulation absolue (« le meilleur », « n°1 », « 100 % sûr », « résultats garantis ») — conformité publicitaire.\n\n";
+    p += "# Discipline de sortie\n";
+    p += "1. Séparer les trois volets par « --- » et tout produire intégralement, sans abréger.\n";
+    p += "2. Pour toute information temps réel incertaine (prix, ouvertures, conditions de réservation), donner des fourchettes et marquer [À VÉRIFIER MANUELLEMENT] ; ne jamais inventer de chiffres exacts.\n";
+    p += "3. Si une information manquante affecte la qualité, lister d'abord vos questions (5 maximum), puis produire un brouillon fondé sur des hypothèses raisonnables.\n";
+    return p;
+  }
+
+  if(lang === 'es'){
+    var p = '';
+    p += '# Rol\n';
+    p += 'Eres un director de producto de viajes de estudios con 15 años de experiencia en viajes educativos internacionales, experto en diseño de programas, cálculo de costes y marketing de inscripción. Tus programas destacan por ser curriculares, seguros y generadores de resultados tangibles para los alumnos. Has trabajado con decenas de organizaciones.\n\n';
+    p += '# Tarea\n';
+    p += 'A partir de los requisitos siguientes, elabora un kit completo de desarrollo de producto en 3 partes para un viaje de estudios: (A) itinerario, (B) hoja de costes y precios, (C) borrador de página de inscripción. Responde íntegramente en español.\n\n';
+    p += '# Requisitos\n';
+    p += '- Destino: ' + d.dest + '\n';
+    p += '- Duración: ' + d.days + '\n';
+    if(d.when) p += '- Fechas previstas: ' + d.when + '\n';
+    p += '- Edad de los alumnos: ' + d.age + '\n';
+    p += '- Tamaño del grupo: ' + d.size + ' alumnos\n';
+    p += '- Tema del viaje: ' + d.theme + '\n';
+    if(d.from) p += '- Ciudad de salida: ' + d.from + '\n';
+    if(d.budget) p += '- Presupuesto por persona: ' + d.budget + ' CNY\n';
+    if(d.hotel) p += '- Estándar de alojamiento y comidas: ' + d.hotel + '\n';
+    if(d.special) p += '- Requisitos especiales: ' + d.special + '\n';
+    if(d.brand) p += '- Organización y tono: ' + d.brand + '\n';
+    if(d.extra) p += '- Notas adicionales: ' + d.extra + '\n';
+    p += '\n';
+    p += '# A. Itinerario (día a día)\n';
+    p += 'Requisitos:\n';
+    p += '1. Día a día: fecha / ciudad / mañana / tarde / noche, con un [Objetivo educativo] en cada parada (qué aprenden y producen los alumnos ese día).\n';
+    p += '2. Diseño curricular: ciclo de aprendizaje completo — preparación previa (sesiones online) → indagación en el viaje (fichas diarias / diario de campo) → resultados (presentación de clausura / informe / certificado).\n';
+    p += '3. Ritmo razonable: máximo 3 actividades principales al día, sin maratones de tachar casillas; sin actividades pesadas en días de traslado; indicar medio de transporte y duración estimada de cada trayecto.\n';
+    p += '4. Adecuación a la edad: actividades, intensidad de caminata y profundidad de contenidos acordes al grupo de edad.\n';
+    p += '5. Propuesta de personal: ratios y funciones (guía chino, mentores locales, monitores) — mínimo 1:8 para 12 años o menos, 1:10 para 13+.\n';
+    p += '6. Seguridad: lista de 5–8 puntos de seguridad y emergencia propios del destino y la edad (médico, niños perdidos, comida, clima, documentos).\n\n';
+    p += '# B. Hoja de costes y precios\n';
+    p += 'Requisitos:\n';
+    p += '1. Tabla Markdown con las partidas: vuelos internacionales (si aplica), visado y gestiones, alojamiento, comidas, transporte local, entradas y actividades, programa y docentes, prorrateo de guías y personal, seguro de viaje, materiales y diario de campo, otros.\n';
+    p += '2. Cada fila: rango de coste estimado (CNY/persona), base de cálculo y marca [VERIFICACIÓN MANUAL PENDIENTE] — obligatoria para todo precio en tiempo real (vuelos, hoteles, entradas, partidas sensibles al cambio).\n';
+    p += '3. Resumen: coste total por persona → precio de venta sugerido con margen bruto del 18 %–25 % → propuesta de dos tarifas (early-bird / regular).\n';
+    p += '4. Si una partida está excluida (ej. vuelos internacionales), listarla aparte como rango de referencia fuera del total.\n\n';
+    p += '# C. Borrador de página de inscripción\n';
+    p += 'Requisitos:\n';
+    p += '1. Estructura: titular + subtítulo / 3–4 puntos fuertes (orientados al valor educativo, sin adjetivos vacíos) / tabla resumen del itinerario / logros de los alumnos (competencias + entregables concretos) / seguridad y supervisión / qué incluye y no incluye el precio / condiciones de inscripción (edad, plazas, fecha límite, política de cancelación como marcador).\n';
+    p += '2. Tono acorde a la marca; escrito para padres que leen en el móvil, respondiendo a sus tres preguntas: qué aprenderá mi hijo, si es seguro, si vale la pena.\n';
+    p += '3. Sin afirmaciones absolutas («el mejor», «n.º 1», «100 % seguro», «resultados garantizados») — cumplimiento publicitario.\n\n';
+    p += '# Disciplina de salida\n';
+    p += '1. Separa las tres partes con "---" y entrégalas completas, sin abreviar.\n';
+    p += '2. Para toda información en tiempo real incierta (precios, aperturas, requisitos de reserva), da rangos de referencia y marca [VERIFICACIÓN MANUAL PENDIENTE]; nunca inventes cifras exactas.\n';
+    p += '3. Si falta información que afecte a la calidad, lista primero tus preguntas (máximo 5) y luego elabora un borrador con supuestos razonables.\n';
+    return p;
+  }
+
+  if(lang === 'de'){
+    var p = '';
+    p += '# Rolle\n';
+    p += 'Sie sind Produktleiter für Studienreisen mit 15 Jahren Erfahrung im internationalen Bildungstourismus, Experte für Reisekonzeption, Kostenkalkulation und Anmeldemarketing. Ihre Programme gelten als curricular aufgebaut, sicherheitskontrolliert und ergebnisorientiert. Sie haben Dutzende Anbieter betreut.\n\n';
+    p += '# Aufgabe\n';
+    p += 'Erstellen Sie auf Basis der folgenden Anforderungen ein vollständiges Produktentwicklungs-Kit in 3 Teilen für eine Studienreise: (A) Reiseplan, (B) Kosten- & Preisliste, (C) Entwurf der Anmeldeseite. Antworten Sie vollständig auf Deutsch.\n\n';
+    p += '# Anforderungen\n';
+    p += '- Reiseziel: ' + d.dest + '\n';
+    p += '- Dauer: ' + d.days + '\n';
+    if(d.when) p += '- Geplante Reisezeit: ' + d.when + '\n';
+    p += '- Alter der Schüler: ' + d.age + '\n';
+    p += '- Gruppengröße: ' + d.size + ' Schüler\n';
+    p += '- Reisethema: ' + d.theme + '\n';
+    if(d.from) p += '- Abflugstadt: ' + d.from + '\n';
+    if(d.budget) p += '- Budget pro Person: ' + d.budget + ' CNY\n';
+    if(d.hotel) p += '- Standard Unterkunft & Verpflegung: ' + d.hotel + '\n';
+    if(d.special) p += '- Besondere Anforderungen: ' + d.special + '\n';
+    if(d.brand) p += '- Anbieter & Tonalität: ' + d.brand + '\n';
+    if(d.extra) p += '- Zusätzliche Hinweise: ' + d.extra + '\n';
+    p += '\n';
+    p += '# A. Reiseplan (Tag für Tag)\n';
+    p += 'Anforderungen:\n';
+    p += '1. Tag für Tag: Datum / Stadt / Vormittag / Nachmittag / Abend, mit [Lernziel] für jede Station (was die Schüler an diesem Tag lernen und erstellen).\n';
+    p += '2. Curriculares Design: vollständiger Lernkreislauf — Vorbereitung (Online-Sessions vor Abreise) → Erkundung unterwegs (tägliche Aufgabenblätter / Forschertagebuch) → Ergebnisse (Abschlusspräsentation / Bericht / Zertifikat).\n';
+    p += '3. Vernünftiges Tempo: maximal 3 Kernaktivitäten pro Tag, kein Abhaken von Sehenswürdigkeiten; keine schweren Programmpunkte an Transfertagen; Transportmittel und geschätzte Fahrzeit je Etappe angeben.\n';
+    p += '4. Altersgerecht: Aktivitäten, Gehintensität und inhaltliche Tiefe passend zur Altersgruppe.\n';
+    p += '5. Betreuungsvorschlag: Verhältnisse und Aufgaben von chinesischer Reiseleitung, lokalen Mentoren und Betreuern — mindestens 1:8 bis 12 Jahre, 1:10 ab 13 Jahren.\n';
+    p += '6. Sicherheit: 5–8 sicherheits- und notfallrelevante Punkte passend zu Reiseziel und Alter (Medizinisches, verlorene Schüler, Verpflegung, Wetter, Dokumente).\n\n';
+    p += '# B. Kosten- & Preisliste\n';
+    p += 'Anforderungen:\n';
+    p += '1. Markdown-Tabelle mit den Positionen: internationale Flüge (falls zutreffend), Visum & Formalitäten, Unterkunft, Verpflegung, lokaler Transport, Eintritte & Aktivitäten, Curriculum & Lehrkräfte, Kostenanteil Reiseleitung & Team, Reiseversicherung, Materialien & Forschertagebuch, Sonstiges.\n';
+    p += '2. Pro Zeile: geschätzte Kostenspanne (CNY pro Person), Kalkulationsgrundlage und Kennzeichnung [MANUELL ZU PRÜFEN] — Pflicht bei allen Echtzeitpreisen (Flüge, Hotels, Eintritte, kurssensitive Posten).\n';
+    p += '3. Zusammenfassung: Gesamtkosten pro Person → empfohlener Verkaufspreis bei 18 %–25 % Bruttomarge → zweistufige Preisempfehlung (Frühbucher / regulär).\n';
+    p += '4. Ist eine Position ausgeschlossen (z. B. internationale Flüge), separat als Referenzspanne ausweisen, nicht im Gesamtpreis enthalten.\n\n';
+    p += '# C. Entwurf der Anmeldeseite\n';
+    p += 'Anforderungen:\n';
+    p += '1. Struktur: Titel + Untertitel / 3–4 Kernvorteile (bildungsorientiert, keine leeren Adjektive) / Übersichtstabelle des Programms / Lernergebnisse der Schüler (Kompetenzen + konkrete Ergebnisse) / Sicherheit & Betreuung / im Preis enthalten und nicht enthalten / Anmeldehinweise (Alter, Plätze, Frist, Platzhalter Stornoregeln).\n';
+    p += '2. Tonalität passend zum Anbieter; für Eltern am Smartphone geschrieben, mit Antworten auf deren drei Kernfragen: Was lernt mein Kind, ist es sicher, lohnt es sich.\n';
+    p += '3. Keine absoluten Aussagen wie „das Beste“, „Nr. 1“, „100 % sicher“, „garantierte Ergebnisse“ (Werberecht).\n\n';
+    p += '# Ausgabedisziplin\n';
+    p += '1. Die drei Teile mit „---“ trennen und vollständig ausgeben, nicht kürzen.\n';
+    p += '2. Bei allen unsicheren Echtzeitinformationen (Preise, Öffnungszeiten, Buchungsbedingungen) Referenzspannen angeben und [MANUELL ZU PRÜFEN] kennzeichnen; niemals exakte Zahlen erfinden.\n';
+    p += '3. Fehlen Informationen, die die Qualität wesentlich beeinflussen, zuerst bis zu 5 Rückfragen auflisten, dann einen Entwurf auf Basis vernünftiger Annahmen erstellen.\n';
+    return p;
+  }
+
+  if(lang === 'sv'){
+    var p = '';
+    p += '# Roll\n';
+    p += 'Du är produktchef för studieresor med 15 års erfarenhet av internationella utbildningsresor, expert på reseutformning, kostnadskalkylering och anmälningsmarknadsföring. Dina program är kända för att vara kurrikulumstyrda, säkerhetskontrollerade och ge synliga elevresultat. Du har hjälpt dussintals arrangörer.\n\n';
+    p += '# Uppgift\n';
+    p += 'Utifrån kraven nedan, ta fram ett komplett produktutvecklingskit i 3 delar för en studieresa: (A) resplan, (B) kostnads- och prisblad, (C) utkast till anmälningssida. Svara helt på svenska.\n\n';
+    p += '# Krav\n';
+    p += '- Destination: ' + d.dest + '\n';
+    p += '- Längd: ' + d.days + '\n';
+    if(d.when) p += '- Planerade resdatum: ' + d.when + '\n';
+    p += '- Elevernas ålder: ' + d.age + '\n';
+    p += '- Gruppstorlek: ' + d.size + ' elever\n';
+    p += '- Resans tema: ' + d.theme + '\n';
+    if(d.from) p += '- Avresestad: ' + d.from + '\n';
+    if(d.budget) p += '- Budget per person: ' + d.budget + ' CNY\n';
+    if(d.hotel) p += '- Standard för boende & måltider: ' + d.hotel + '\n';
+    if(d.special) p += '- Särskilda krav: ' + d.special + '\n';
+    if(d.brand) p += '- Organisation & tonalitet: ' + d.brand + '\n';
+    if(d.extra) p += '- Ytterligare anteckningar: ' + d.extra + '\n';
+    p += '\n';
+    p += '# A. Resplan (dag för dag)\n';
+    p += 'Krav:\n';
+    p += '1. Dag för dag: datum / stad / förmiddag / eftermiddag / kväll, med ett [Pedagogiskt mål] för varje stopp (vad eleverna lär sig och producerar den dagen).\n';
+    p += '2. Kurrikulumdesign: komplett inlärningsloop — förberedelse (onlinesessioner före avresa) → utforskande under resan (dagliga uppgiftsblad / fältdagbok) → resultat (avslutande presentation / rapport / certifikat).\n';
+    p += '3. Rimligt tempo: max 3 kärnaktiviteter per dag, inget checkliste-jäkt; inga tunga aktiviteter på transferdagar; ange transportmedel och uppskattad restid per sträcka.\n';
+    p += '4. Åldersanpassat: aktiviteter, gångintensitet och innehållets djup ska matcha åldersgruppen.\n';
+    p += '5. Bemanningsförslag: proportioner och roller för kinesisk reseledare, lokala mentorer och ledare — minst 1:8 för 12 år och yngre, 1:10 för 13+.\n';
+    p += '6. Säkerhet: lista 5–8 säkerhets- och beredskapspunkter anpassade till destination och ålder (medicinskt, borttappade elever, mat, väder, dokument).\n\n';
+    p += '# B. Kostnads- och prisblad\n';
+    p += 'Krav:\n';
+    p += '1. Markdown-tabell med posterna: internationella flyg (vid behov), visum & handlingar, boende, måltider, lokal transport, entréer & aktiviteter, program & lärare, kostnadsfördelning ledare & personal, reseförsäkring, material & fältdagbok, övrigt.\n';
+    p += '2. Varje rad: uppskattat kostnadsintervall (CNY per person), beräkningsgrund och markering [KRÄVER MANUELL VERIFIERING] — obligatorisk för alla realtidspriser (flyg, hotell, entréer, valutakänsliga poster).\n';
+    p += '3. Sammanfattning: total kostnad per person → rekommenderat försäljningspris vid 18 %–25 % bruttomarginal → två nivåer (early-bird / ordinarie).\n';
+    p += '4. Om en post är exkluderad (t.ex. internationella flyg), lista den separat som referensintervall utanför totalen.\n\n';
+    p += '# C. Utkast till anmälningssida\n';
+    p += 'Krav:\n';
+    p += '1. Struktur: rubrik + underrubrik / 3–4 kärnfördelar (utbildningsvärdedrivna, inga tomma adjektiv) / översiktstabell över programmet / elevens utbytte (färdigheter + konkreta resultat) / säkerhet & uppsikt / vad priset inkluderar och exkluderar / anmälningsinfo (ålder, platser, sista datum, platshållare för avbokningsregler).\n';
+    p += '2. Tonalitet matchad mot varumärket; skriven för föräldrar på mobilen, med svar på deras tre frågor: vad lär sig mitt barn, är det säkert, är det värt priset.\n';
+    p += '3. Inga absoluta påståenden som "bäst", "nr 1", "100 % säkert" eller "garanterade resultat" (marknadsföringslagstiftning).\n\n';
+    p += '# Outputdisciplin\n';
+    p += '1. Separera de tre delarna med "---" och leverera dem kompletta, utan förkortningar.\n';
+    p += '2. För all osäker realtidsinformation (priser, öppettider, bokningskrav), ge referensintervall och markera [KRÄVER MANUELL VERIFIERING]; hitta aldrig på exakta siffror.\n';
+    p += '3. Om information saknas som väsentligt påverkar kvaliteten, lista först dina frågor (max 5) och ta sedan fram ett utkast baserat på rimliga antaganden.\n';
     return p;
   }
 
