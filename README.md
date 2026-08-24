@@ -12,7 +12,7 @@
 
 ## 使用方式
 
-**在线使用**：打开 GitHub Pages 地址（见仓库 About 或 Releases 说明）即可，无需安装。
+**在线使用**：打开 <https://deliahuang621-png.github.io/tourcraft/> 即可，无需安装。
 
 **本地使用**：下载 `index.html`，双击用浏览器打开。单文件、零依赖、数据不出浏览器。
 
