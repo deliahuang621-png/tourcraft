@@ -47,10 +47,20 @@
   header.top{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; gap:16px; flex-wrap:wrap;}
   header.top h1{font-size:24px; letter-spacing:.01em;}
   header.top p{color:var(--muted); font-size:13.5px; margin-top:4px; max-width:640px;}
+  .top-right{display:flex; align-items:center; gap:10px;}
   .badge{
     background:var(--ok-soft); color:var(--ok); font-size:12px; font-weight:600;
     padding:5px 12px; border-radius:99px; white-space:nowrap;
   }
+  .lang-switch{
+    display:inline-flex; border:1px solid var(--line); border-radius:99px; overflow:hidden;
+    background:#fff; box-shadow:var(--shadow);
+  }
+  .lang-switch button{
+    border:none; background:transparent; cursor:pointer; font-family:inherit;
+    font-size:12.5px; font-weight:600; color:var(--muted); padding:6px 14px;
+  }
+  .lang-switch button.on{background:var(--accent); color:#fff;}
 
   .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:24px;}
   @media (max-width:900px){ .steps{grid-template-columns:1fr;} }
@@ -126,224 +136,392 @@
   <aside>
     <div class="brand">
       <div class="logo">匠</div>
-      <div><b>线路匠心</b><span>TOURCRAFT</span></div>
+      <div><b data-i18n="brand">线路匠心</b><span>TOURCRAFT</span></div>
     </div>
     <nav>
-      <div class="sec">产品研发</div>
-      <a href="#" class="active"><span class="dot"></span>三件套生成器</a>
+      <div class="sec" data-i18n="nav_sec">产品研发</div>
+      <a href="#" class="active"><span class="dot"></span><span data-i18n="nav_item">三件套生成器</span></a>
     </nav>
-    <div class="side-foot">
-      v2.0 · 本地单文件工具<br>数据不出浏览器
-    </div>
+    <div class="side-foot" data-i18n="side_foot">v2.1 · 本地单文件工具<br>数据不出浏览器</div>
   </aside>
 
   <main>
-    <div class="crumb">产品研发 / 三件套生成器</div>
+    <div class="crumb" data-i18n="crumb">产品研发 / 三件套生成器</div>
     <header class="top">
       <div>
-        <h1>游学三件套生成器</h1>
-        <p>输入线路需求 → 生成专业主提示词 → 粘贴到 Kimi / ChatGPT / Claude → 输出「行程方案 + 成本报价表 + 招生详情页」三件套</p>
+        <h1 data-i18n="h1">游学三件套生成器</h1>
+        <p data-i18n="subtitle">输入线路需求 → 生成专业主提示词 → 粘贴到 Kimi / ChatGPT / Claude → 输出「行程方案 + 成本报价表 + 招生详情页」三件套</p>
       </div>
-      <span class="badge">AI 出稿 · 人定稿</span>
+      <div class="top-right">
+        <span class="badge" data-i18n="badge">AI 出稿 · 人定稿</span>
+        <div class="lang-switch">
+          <button id="langZh" onclick="setLang('zh')">中文</button>
+          <button id="langEn" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
     </header>
 
     <div class="steps">
-      <div class="step"><span class="no">1</span><span>在左侧填写线路需求（带 <span style="color:#d92d20">*</span> 为必填，越具体输出越好）</span></div>
-      <div class="step"><span class="no">2</span><span>点击「生成主提示词」，右侧得到完整提示词，点「复制」</span></div>
-      <div class="step"><span class="no">3</span><span>粘贴到任意大模型对话框发送，约 1–3 分钟得到三件套初稿，人工精修后交付</span></div>
+      <div class="step"><span class="no">1</span><span data-i18n="step1">在左侧填写线路需求（带 <span style="color:#d92d20">*</span> 为必填，越具体输出越好）</span></div>
+      <div class="step"><span class="no">2</span><span data-i18n="step2">点击「生成主提示词」，右侧得到完整提示词，点「复制」</span></div>
+      <div class="step"><span class="no">3</span><span data-i18n="step3">粘贴到任意大模型对话框发送，约 1–3 分钟得到三件套初稿，人工精修后交付</span></div>
     </div>
 
     <div class="grid">
       <div class="panel">
-        <h2>线路需求</h2>
-        <div class="sub">共 4 组 12 项，带 * 必填</div>
+        <h2 data-i18n="form_h2">线路需求</h2>
+        <div class="sub" data-i18n="form_sub">共 4 组 12 项，带 * 必填</div>
 
         <fieldset>
-          <legend>基础信息</legend>
-          <label>目的地（国家 / 城市）<span class="req">*</span></label>
-          <input id="dest" placeholder="例：新加坡 / 英国伦敦+剑桥 / 日本东京">
+          <legend data-i18n="fs1">基础信息</legend>
+          <label><span data-i18n="lb_dest">目的地（国家 / 城市）</span><span class="req">*</span></label>
+          <input id="dest" data-i18n-ph="ph_dest" placeholder="例：新加坡 / 英国伦敦+剑桥 / 日本东京">
           <div class="row2">
             <div>
-              <label>出行天数<span class="req">*</span></label>
-              <input id="days" placeholder="例：7天6晚">
+              <label><span data-i18n="lb_days">出行天数</span><span class="req">*</span></label>
+              <input id="days" data-i18n-ph="ph_days" placeholder="例：7天6晚">
             </div>
             <div>
-              <label>计划出行时间</label>
-              <input id="when" placeholder="例：2027年寒假 / 暑假二期">
+              <label data-i18n="lb_when">计划出行时间</label>
+              <input id="when" data-i18n-ph="ph_when" placeholder="例：2027年寒假 / 暑假二期">
             </div>
           </div>
         </fieldset>
 
         <fieldset>
-          <legend>团队与预算</legend>
+          <legend data-i18n="fs2">团队与预算</legend>
           <div class="row2">
             <div>
-              <label>学生年龄段 / 年级<span class="req">*</span></label>
-              <input id="age" placeholder="例：10–13岁 / 小学高年级">
+              <label><span data-i18n="lb_age">学生年龄段 / 年级</span><span class="req">*</span></label>
+              <input id="age" data-i18n-ph="ph_age" placeholder="例：10–13岁 / 小学高年级">
             </div>
             <div>
-              <label>团队规模（学生数）<span class="req">*</span></label>
-              <input id="size" placeholder="例：30人">
+              <label><span data-i18n="lb_size">团队规模（学生数）</span><span class="req">*</span></label>
+              <input id="size" data-i18n-ph="ph_size" placeholder="例：30人">
             </div>
           </div>
-          <label>线路主题<span class="req">*</span></label>
+          <label><span data-i18n="lb_theme">线路主题</span><span class="req">*</span></label>
           <select id="theme">
-            <option value="STEM科技研学">STEM科技研学</option>
-            <option value="语言沉浸 / 微留学">语言沉浸 / 微留学</option>
-            <option value="人文历史 / 文化探索">人文历史 / 文化探索</option>
-            <option value="名校访学 / 升学背景提升">名校访学 / 升学背景提升</option>
-            <option value="艺术 / 音乐 / 戏剧">艺术 / 音乐 / 戏剧</option>
-            <option value="体育 / 户外营地">体育 / 户外营地</option>
-            <option value="亲子共游">亲子共游</option>
-            <option value="其他（在补充说明中描述）">其他（在补充说明中描述）</option>
+            <option value="stem" data-i18n="th_stem">STEM科技研学</option>
+            <option value="language" data-i18n="th_language">语言沉浸 / 微留学</option>
+            <option value="culture" data-i18n="th_culture">人文历史 / 文化探索</option>
+            <option value="school" data-i18n="th_school">名校访学 / 升学背景提升</option>
+            <option value="art" data-i18n="th_art">艺术 / 音乐 / 戏剧</option>
+            <option value="sports" data-i18n="th_sports">体育 / 户外营地</option>
+            <option value="family" data-i18n="th_family">亲子共游</option>
+            <option value="other" data-i18n="th_other">其他（在补充说明中描述）</option>
           </select>
           <div class="row2">
             <div>
-              <label>出发城市</label>
-              <input id="from" placeholder="例：北京 / 上海 / 广州">
+              <label data-i18n="lb_from">出发城市</label>
+              <input id="from" data-i18n-ph="ph_from" placeholder="例：北京 / 上海 / 广州">
             </div>
             <div>
-              <label>人均预算（元）</label>
-              <input id="budget" placeholder="例：25000–35000">
+              <label data-i18n="lb_budget">人均预算（元）</label>
+              <input id="budget" data-i18n-ph="ph_budget" placeholder="例：25000–35000">
             </div>
           </div>
         </fieldset>
 
         <fieldset>
-          <legend>标准与要求</legend>
-          <label>住宿与餐饮标准</label>
-          <input id="hotel" placeholder="例：四钻酒店双人间 / 寄宿家庭 / 营地宿舍；含早，正餐自理2顿">
-          <label>特殊要求（安全 / 师资 / 课程 / 饮食等）</label>
-          <textarea id="special" rows="3" placeholder="例：需中方领队全程陪同；要有前置课程和成果展示环节；2名学生清真饮食；必须含1天名校深度参访"></textarea>
+          <legend data-i18n="fs3">标准与要求</legend>
+          <label data-i18n="lb_hotel">住宿与餐饮标准</label>
+          <input id="hotel" data-i18n-ph="ph_hotel" placeholder="例：四钻酒店双人间 / 寄宿家庭 / 营地宿舍；含早，正餐自理2顿">
+          <label data-i18n="lb_special">特殊要求（安全 / 师资 / 课程 / 饮食等）</label>
+          <textarea id="special" rows="3" data-i18n-ph="ph_special" placeholder="例：需中方领队全程陪同；要有前置课程和成果展示环节；2名学生清真饮食；必须含1天名校深度参访"></textarea>
         </fieldset>
 
         <fieldset>
-          <legend>品牌与补充</legend>
-          <label>机构名称与品牌调性（用于详情页文案）</label>
-          <input id="brand" placeholder="例：XX国际游学，调性偏专业严谨 / 活泼亲子">
-          <label>补充说明（已有资源 / 合作方 / 必须包含或排除的项目）</label>
-          <textarea id="extra" rows="3" placeholder="例：已有当地地接社；不含国际机票报价；排除购物点；需安排1晚寄宿家庭体验"></textarea>
+          <legend data-i18n="fs4">品牌与补充</legend>
+          <label data-i18n="lb_brand">机构名称与品牌调性（用于详情页文案）</label>
+          <input id="brand" data-i18n-ph="ph_brand" placeholder="例：XX国际游学，调性偏专业严谨 / 活泼亲子">
+          <label data-i18n="lb_extra">补充说明（已有资源 / 合作方 / 必须包含或排除的项目）</label>
+          <textarea id="extra" rows="3" data-i18n-ph="ph_extra" placeholder="例：已有当地地接社；不含国际机票报价；排除购物点；需安排1晚寄宿家庭体验"></textarea>
         </fieldset>
 
         <div class="actions">
-          <button class="btn" onclick="gen()">生成主提示词</button>
-          <button class="btn ghost" onclick="fillDemo()">填入示例</button>
+          <button class="btn" onclick="gen()" data-i18n="btn_gen">生成主提示词</button>
+          <button class="btn ghost" onclick="fillDemo()" data-i18n="btn_demo">填入示例</button>
         </div>
       </div>
 
       <div class="panel">
-        <h2>主提示词</h2>
-        <div class="sub">复制后粘贴到大模型对话框发送</div>
-        <textarea id="output" readonly placeholder="填写左侧需求后点击「生成主提示词」…"></textarea>
+        <h2 data-i18n="out_h2">主提示词</h2>
+        <div class="sub" data-i18n="out_sub">复制后粘贴到大模型对话框发送</div>
+        <textarea id="output" readonly data-i18n-ph="ph_output" placeholder="填写左侧需求后点击「生成主提示词」…"></textarea>
         <div class="actions">
-          <button class="btn" id="copyBtn" onclick="copyOut()">复制提示词</button>
+          <button class="btn" id="copyBtn" onclick="copyOut()" data-i18n="btn_copy">复制提示词</button>
         </div>
-        <div class="hint" id="copyHint">输出为三件套：<span class="tag">A 行程方案</span><span class="tag">B 成本报价表</span><span class="tag">C 招生详情页</span><br>
+        <div class="hint" id="copyHint" data-i18n="hint">输出为三件套：<span class="tag">A 行程方案</span><span class="tag">B 成本报价表</span><span class="tag">C 招生详情页</span><br>
         <b>使用提示：</b>所有价格和资源信息 AI 只能给参考区间，交付前务必人工核实地接、酒店、门票的实时价格——提示词里已要求 AI 标注「需人工核实」项。</div>
       </div>
     </div>
 
-    <footer class="main-foot">
-      线路匠心 TourCraft v2.0 · 本地单文件工具，数据不出浏览器 · 工作流：需求 → AI 出稿 → 人定稿（AI 负责 90% 共性劳动，定制师负责 10% 经验判断）
+    <footer class="main-foot" data-i18n="footer">
+      线路匠心 TourCraft v2.1 · 本地单文件工具，数据不出浏览器 · 工作流：需求 → AI 出稿 → 人定稿（AI 负责 90% 共性劳动，定制师负责 10% 经验判断）
     </footer>
   </main>
 </div>
 
 <script>
+/* ── i18n ── */
+var I18N = {
+  zh: {
+    title:'线路匠心 TourCraft · 游学三件套生成器',
+    brand:'线路匠心',
+    nav_sec:'产品研发', nav_item:'三件套生成器',
+    side_foot:'v2.1 · 本地单文件工具<br>数据不出浏览器',
+    crumb:'产品研发 / 三件套生成器',
+    h1:'游学三件套生成器',
+    subtitle:'输入线路需求 → 生成专业主提示词 → 粘贴到 Kimi / ChatGPT / Claude → 输出「行程方案 + 成本报价表 + 招生详情页」三件套',
+    badge:'AI 出稿 · 人定稿',
+    step1:'在左侧填写线路需求（带 <span style="color:#d92d20">*</span> 为必填，越具体输出越好）',
+    step2:'点击「生成主提示词」，右侧得到完整提示词，点「复制」',
+    step3:'粘贴到任意大模型对话框发送，约 1–3 分钟得到三件套初稿，人工精修后交付',
+    form_h2:'线路需求', form_sub:'共 4 组 12 项，带 * 必填',
+    out_h2:'主提示词', out_sub:'复制后粘贴到大模型对话框发送',
+    fs1:'基础信息', fs2:'团队与预算', fs3:'标准与要求', fs4:'品牌与补充',
+    lb_dest:'目的地（国家 / 城市）', lb_days:'出行天数', lb_when:'计划出行时间',
+    lb_age:'学生年龄段 / 年级', lb_size:'团队规模（学生数）', lb_theme:'线路主题',
+    lb_from:'出发城市', lb_budget:'人均预算（元）',
+    lb_hotel:'住宿与餐饮标准', lb_special:'特殊要求（安全 / 师资 / 课程 / 饮食等）',
+    lb_brand:'机构名称与品牌调性（用于详情页文案）',
+    lb_extra:'补充说明（已有资源 / 合作方 / 必须包含或排除的项目）',
+    ph_dest:'例：新加坡 / 英国伦敦+剑桥 / 日本东京',
+    ph_days:'例：7天6晚', ph_when:'例：2027年寒假 / 暑假二期',
+    ph_age:'例：10–13岁 / 小学高年级', ph_size:'例：30人',
+    ph_from:'例：北京 / 上海 / 广州', ph_budget:'例：25000–35000',
+    ph_hotel:'例：四钻酒店双人间 / 寄宿家庭 / 营地宿舍；含早，正餐自理2顿',
+    ph_special:'例：需中方领队全程陪同；要有前置课程和成果展示环节；2名学生清真饮食；必须含1天名校深度参访',
+    ph_brand:'例：XX国际游学，调性偏专业严谨 / 活泼亲子',
+    ph_extra:'例：已有当地地接社；不含国际机票报价；排除购物点；需安排1晚寄宿家庭体验',
+    ph_output:'填写左侧需求后点击「生成主提示词」…',
+    th_stem:'STEM科技研学', th_language:'语言沉浸 / 微留学', th_culture:'人文历史 / 文化探索',
+    th_school:'名校访学 / 升学背景提升', th_art:'艺术 / 音乐 / 戏剧', th_sports:'体育 / 户外营地',
+    th_family:'亲子共游', th_other:'其他（在补充说明中描述）',
+    btn_gen:'生成主提示词', btn_demo:'填入示例', btn_copy:'复制提示词', btn_copied:'已复制 ✓',
+    hint:'输出为三件套：<span class="tag">A 行程方案</span><span class="tag">B 成本报价表</span><span class="tag">C 招生详情页</span><br><b>使用提示：</b>所有价格和资源信息 AI 只能给参考区间，交付前务必人工核实地接、酒店、门票的实时价格——提示词里已要求 AI 标注「需人工核实」项。',
+    hint_copied:'<b>已复制 ✓</b> 现在粘贴到 Kimi / ChatGPT / Claude 发送即可。',
+    footer:'线路匠心 TourCraft v2.1 · 本地单文件工具，数据不出浏览器 · 工作流：需求 → AI 出稿 → 人定稿（AI 负责 90% 共性劳动，定制师负责 10% 经验判断）',
+    alert_missing:'请补充必填项：', alert_nogen:'请先生成主提示词',
+    f_dest:'目的地', f_days:'出行天数', f_age:'学生年龄段', f_size:'团队规模'
+  },
+  en: {
+    title:'TourCraft · Study Tour 3-Piece Kit Generator',
+    brand:'TourCraft',
+    nav_sec:'PRODUCT R&D', nav_item:'3-Piece Kit Generator',
+    side_foot:'v2.1 · Single-file local tool<br>Data never leaves your browser',
+    crumb:'Product R&D / 3-Piece Kit Generator',
+    h1:'Study Tour 3-Piece Kit Generator',
+    subtitle:'Enter tour requirements → generate a professional master prompt → paste into Kimi / ChatGPT / Claude → get the full kit: itinerary + cost & pricing sheet + enrollment landing page',
+    badge:'AI drafts · Humans finalize',
+    step1:'Fill in the tour requirements on the left (<span style="color:#d92d20">*</span> = required; the more specific, the better the output)',
+    step2:'Click "Generate Master Prompt", then copy the result on the right',
+    step3:'Paste into any LLM chat and send; get a draft kit in 1–3 minutes, then refine by hand before delivery',
+    form_h2:'Tour Requirements', form_sub:'12 fields in 4 groups · * required',
+    out_h2:'Master Prompt', out_sub:'Copy, then paste into an LLM chat and send',
+    fs1:'Basics', fs2:'Group & Budget', fs3:'Standards & Requirements', fs4:'Brand & Notes',
+    lb_dest:'Destination (country / city)', lb_days:'Duration', lb_when:'Planned travel dates',
+    lb_age:'Student age / grade', lb_size:'Group size (students)', lb_theme:'Tour theme',
+    lb_from:'Departure city', lb_budget:'Budget per person (CNY)',
+    lb_hotel:'Accommodation & meal standard', lb_special:'Special requirements (safety / staffing / curriculum / diet, etc.)',
+    lb_brand:'Organization name & brand tone (for landing-page copy)',
+    lb_extra:'Additional notes (existing resources / partners / must-include or must-exclude items)',
+    ph_dest:'e.g. Singapore / London+Cambridge, UK / Tokyo, Japan',
+    ph_days:'e.g. 7 days 6 nights', ph_when:'e.g. Winter break 2027 / Summer session 2',
+    ph_age:'e.g. Ages 10–13 / upper primary', ph_size:'e.g. 30 students',
+    ph_from:'e.g. Beijing / Shanghai / Guangzhou', ph_budget:'e.g. 25,000–35,000',
+    ph_hotel:'e.g. 4-star twin rooms / homestay / camp dorms; breakfast included, 2 dinners on own',
+    ph_special:'e.g. Chinese tour leader throughout; pre-trip course + final showcase; 2 halal students; must include 1 full-day elite-university visit',
+    ph_brand:'e.g. XX International Tours — professional and rigorous / lively family style',
+    ph_extra:'e.g. Existing local DMC; international airfare excluded; no shopping stops; include 1 night homestay',
+    ph_output:'Fill in the requirements on the left, then click "Generate Master Prompt"…',
+    th_stem:'STEM study tour', th_language:'Language immersion / micro-study-abroad', th_culture:'Humanities, history & culture',
+    th_school:'Elite school visits / academic profile building', th_art:'Arts / music / drama', th_sports:'Sports / outdoor camp',
+    th_family:'Parent-child tour', th_other:'Other (describe in additional notes)',
+    btn_gen:'Generate Master Prompt', btn_demo:'Fill Example', btn_copy:'Copy Prompt', btn_copied:'Copied ✓',
+    hint:'Output is a 3-piece kit: <span class="tag">A Itinerary</span><span class="tag">B Cost & Pricing Sheet</span><span class="tag">C Enrollment Landing Page</span><br><b>Note:</b> AI can only give reference ranges for prices and availability — always verify ground operator, hotel and ticket prices before delivery. The prompt already requires the AI to flag all "needs manual verification" items.',
+    hint_copied:'<b>Copied ✓</b> Now paste it into Kimi / ChatGPT / Claude and send.',
+    footer:'TourCraft v2.1 · Single-file local tool, data never leaves your browser · Workflow: requirements → AI draft → human final (AI does 90% of the common labor; the designer owns the 10% that takes experience)',
+    alert_missing:'Please complete required fields: ', alert_nogen:'Please generate the master prompt first',
+    f_dest:'Destination', f_days:'Duration', f_age:'Student age', f_size:'Group size'
+  }
+};
+
+var lang = (function(){
+  var q = new URLSearchParams(location.search).get('lang');
+  if(q === 'en' || q === 'zh'){ try{ localStorage.setItem('tc-lang', q); }catch(e){} return q; }
+  try{ return localStorage.getItem('tc-lang') || 'zh'; }catch(e){ return 'zh'; }
+})();
+
+function t(k){ return I18N[lang][k] || I18N.zh[k] || k; }
+
+function setLang(l){
+  lang = l;
+  try{ localStorage.setItem('tc-lang', l); }catch(e){}
+  applyLang();
+}
+
+function applyLang(){
+  document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
+  document.title = t('title');
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ el.innerHTML = t(el.getAttribute('data-i18n')); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){ el.placeholder = t(el.getAttribute('data-i18n-ph')); });
+  document.getElementById('langZh').classList.toggle('on', lang === 'zh');
+  document.getElementById('langEn').classList.toggle('on', lang === 'en');
+}
+
 function v(id){ return document.getElementById(id).value.trim(); }
 
 function fillDemo(){
-  document.getElementById('dest').value='新加坡';
-  document.getElementById('days').value='7天6晚';
-  document.getElementById('when').value='2027年寒假';
-  document.getElementById('age').value='10–13岁（小学高年级至初一）';
-  document.getElementById('size').value='30人';
-  document.getElementById('theme').value='STEM科技研学';
-  document.getElementById('from').value='北京';
-  document.getElementById('budget').value='28000–35000';
-  document.getElementById('hotel').value='四钻酒店双人间，含早餐；正餐以当地特色团餐为主';
-  document.getElementById('special').value='需中方领队+当地双语导师双导师制；含前置线上课程2次和结营成果展示；1天国立大学/科技馆深度参访';
-  document.getElementById('brand').value='示例国际游学，调性专业、注重教育成果外化';
-  document.getElementById('extra').value='已有合作地接社；报价不含国际往返机票，单独列参考价；排除一切购物点';
+  var d = (lang === 'zh') ? {
+    dest:'新加坡', days:'7天6晚', when:'2027年寒假',
+    age:'10–13岁（小学高年级至初一）', size:'30人', theme:'stem', from:'北京',
+    budget:'28000–35000',
+    hotel:'四钻酒店双人间，含早餐；正餐以当地特色团餐为主',
+    special:'需中方领队+当地双语导师双导师制；含前置线上课程2次和结营成果展示；1天国立大学/科技馆深度参访',
+    brand:'示例国际游学，调性专业、注重教育成果外化',
+    extra:'已有合作地接社；报价不含国际往返机票，单独列参考价；排除一切购物点'
+  } : {
+    dest:'Singapore', days:'7 days 6 nights', when:'Winter break 2027',
+    age:'Ages 10–13 (upper primary to Grade 7)', size:'30 students', theme:'stem', from:'Beijing',
+    budget:'28,000–35,000',
+    hotel:'4-star twin rooms with breakfast; local specialty group meals for lunch/dinner',
+    special:'Dual-staffing: Chinese tour leader + local bilingual mentor; 2 pre-trip online sessions + closing showcase; 1 full-day deep visit to National University / Science Centre',
+    brand:'Sample International Tours — professional tone, focused on visible learning outcomes',
+    extra:'Existing partner DMC; international airfare excluded (list as separate reference); strictly no shopping stops'
+  };
+  Object.keys(d).forEach(function(k){ document.getElementById(k).value = d[k]; });
+}
+
+function buildPrompt(d){
+  if(lang === 'zh'){
+    var p = '';
+    p += '# 角色\n';
+    p += '你是一位有15年经验的国际游学产品总监，精通游学线路研发、成本核算与招生营销。你设计的线路以「课程化、安全可控、成果可外化」著称，服务过数十家游学机构。\n\n';
+    p += '# 本次任务\n';
+    p += '请基于以下需求，为一条游学线路输出完整的产品研发三件套（A 行程方案、B 成本报价表、C 招生详情页初稿）。\n\n';
+    p += '# 线路需求\n';
+    p += '- 目的地：' + d.dest + '\n';
+    p += '- 出行天数：' + d.days + '\n';
+    if(d.when) p += '- 计划出行时间：' + d.when + '\n';
+    p += '- 学生年龄段：' + d.age + '\n';
+    p += '- 团队规模：' + d.size + '名学生\n';
+    p += '- 线路主题：' + d.theme + '\n';
+    if(d.from) p += '- 出发城市：' + d.from + '\n';
+    if(d.budget) p += '- 人均预算：' + d.budget + ' 元\n';
+    if(d.hotel) p += '- 住宿餐饮标准：' + d.hotel + '\n';
+    if(d.special) p += '- 特殊要求：' + d.special + '\n';
+    if(d.brand) p += '- 机构与调性：' + d.brand + '\n';
+    if(d.extra) p += '- 补充说明：' + d.extra + '\n';
+    p += '\n';
+    p += '# A. 行程方案（逐日）\n';
+    p += '要求：\n';
+    p += '1. 逐日输出：日期/城市/上午/下午/晚上安排，标注每个点的【教育目标】（这一天学生学什么、产出什么）。\n';
+    p += '2. 课程化设计：整条线路要有「前置导入（行前线上课）→ 行程探究（每日任务单/研学手册）→ 成果产出（结营展示/报告/证书）」的完整学习闭环，并在行程中体现。\n';
+    p += '3. 节奏合理：每天核心活动不超过3个，避免打卡式赶场；城际移动日不排重活动；标注每段交通方式与预估车程。\n';
+    p += '4. 适龄匹配：活动内容、步行强度、知识深度须匹配所给年龄段。\n';
+    p += '5. 师资配置建议：给出中方领队、当地导师、生活老师的配比（10–12岁及以下不低于1:8，13岁以上不低于1:10）及分工。\n';
+    p += '6. 安全预案要点：列5–8条针对该目的地与年龄段的安全与应急要点（医疗、走失、饮食、天气、证件）。\n\n';
+    p += '# B. 成本报价表\n';
+    p += '要求：\n';
+    p += '1. 用 Markdown 表格输出，类目包括：国际往返机票（如需）、签证及材料服务、境外住宿、餐饮、地接交通、门票及活动、课程及师资、领队及工作人员成本分摊、境外保险、物料及研学手册、其他。\n';
+    p += '2. 每行给出：成本估算区间（元/人）、计价依据说明、以及【需人工核实】标注——凡涉及实时价格（机票、酒店、门票、汇率敏感项）必须标注。\n';
+    p += '3. 汇总：人均总成本区间 → 按毛利率 18%–25% 给出建议零售价 → 给出早鸟价/常规价两档定价建议。\n';
+    p += '4. 若需求中注明某项不含（如不含国际机票），该项单独列参考区间并注明不含在总价内。\n\n';
+    p += '# C. 招生详情页初稿\n';
+    p += '要求：\n';
+    p += '1. 结构：主标题+副标题 / 3–4个核心亮点（教育价值导向，不写空洞形容词）/ 行程概览表 / 学生收获（能力+可带走的成果物）/ 安全保障说明 / 费用包含与不包含 / 报名须知（年龄、人数、截止日期、退改规则占位）。\n';
+    p += '2. 文案风格匹配所给机构调性；面向家长阅读场景，回答家长最关心的三个问题：孩子学什么、安不安全、值不值。\n';
+    p += '3. 不使用「最好」「第一」「100%安全」「保证收获」等绝对化用语（广告法合规）。\n\n';
+    p += '# 输出纪律\n';
+    p += '1. 三个部分用「---」分隔，完整输出，不要省略。\n';
+    p += '2. 所有不确定的实时信息（价格、开放状态、预约要求）一律给参考区间并标注【需人工核实】，不得编造确切数字。\n';
+    p += '3. 如果某项需求信息不足且影响设计质量，先列出你需要我补充的问题（最多5个），再基于合理假设给出初稿。\n';
+    return p;
+  }
+
+  var p = '';
+  p += '# Role\n';
+  p += 'You are a study-tour product director with 15 years of experience in international educational travel, expert in tour design, cost accounting, and enrollment marketing. Your programs are known for being curriculum-driven, safety-controlled, and producing tangible student outcomes. You have served dozens of study-tour organizations.\n\n';
+  p += '# Task\n';
+  p += 'Based on the requirements below, produce a complete product-development 3-piece kit for one study tour: (A) itinerary plan, (B) cost & pricing sheet, (C) enrollment landing-page draft. Respond entirely in English.\n\n';
+  p += '# Requirements\n';
+  p += '- Destination: ' + d.dest + '\n';
+  p += '- Duration: ' + d.days + '\n';
+  if(d.when) p += '- Planned travel dates: ' + d.when + '\n';
+  p += '- Student age: ' + d.age + '\n';
+  p += '- Group size: ' + d.size + ' students\n';
+  p += '- Tour theme: ' + d.theme + '\n';
+  if(d.from) p += '- Departure city: ' + d.from + '\n';
+  if(d.budget) p += '- Budget per person: CNY ' + d.budget + '\n';
+  if(d.hotel) p += '- Accommodation & meal standard: ' + d.hotel + '\n';
+  if(d.special) p += '- Special requirements: ' + d.special + '\n';
+  if(d.brand) p += '- Organization & tone: ' + d.brand + '\n';
+  if(d.extra) p += '- Additional notes: ' + d.extra + '\n';
+  p += '\n';
+  p += '# A. Itinerary Plan (day by day)\n';
+  p += 'Requirements:\n';
+  p += '1. Day-by-day output: date / city / morning / afternoon / evening, with an [Educational Objective] for each stop (what students learn and produce that day).\n';
+  p += '2. Curriculum design: the tour must show a complete learning loop — pre-trip introduction (online sessions) → in-trip inquiry (daily task sheets / field journal) → outcomes (closing showcase / report / certificate).\n';
+  p += '3. Sensible pacing: no more than 3 core activities per day; no checklist-style rushing; no heavy activities on intercity transfer days; state transport mode and estimated travel time for each leg.\n';
+  p += '4. Age-appropriate: activities, walking intensity, and content depth must match the stated age group.\n';
+  p += '5. Staffing proposal: ratios and responsibilities for Chinese tour leader, local mentors, and chaperones (at least 1:8 for ages 12 and under, 1:10 for 13+).\n';
+  p += '6. Safety essentials: list 5–8 safety and emergency points specific to this destination and age group (medical, lost students, food, weather, documents).\n\n';
+  p += '# B. Cost & Pricing Sheet\n';
+  p += 'Requirements:\n';
+  p += '1. Output as a Markdown table with categories: international airfare (if applicable), visa & document services, accommodation, meals, local transport, tickets & activities, curriculum & teaching staff, leader & staff cost allocation, travel insurance, materials & field journal, other.\n';
+  p += '2. Each row: estimated cost range (CNY per person), pricing basis, and a [NEEDS MANUAL VERIFICATION] flag — mandatory for all real-time prices (flights, hotels, tickets, FX-sensitive items).\n';
+  p += '3. Summary: total cost range per person → suggested retail price at 18%–25% gross margin → two-tier pricing suggestion (early-bird / regular).\n';
+  p += '4. If the requirements exclude an item (e.g. international airfare), list it separately as a reference range marked as not included in the total.\n\n';
+  p += '# C. Enrollment Landing-Page Draft\n';
+  p += 'Requirements:\n';
+  p += '1. Structure: headline + subheadline / 3–4 core highlights (education-value driven, no empty adjectives) / itinerary overview table / student takeaways (skills + physical deliverables) / safety & safeguarding notes / what the fee includes and excludes / enrollment notes (age, group size, deadline, placeholder refund policy).\n';
+  p += '2. Match the stated brand tone; write for parents reading on their phones, answering their top three questions: what will my child learn, is it safe, is it worth it.\n';
+  p += '3. No absolute claims such as "the best", "No.1", "100% safe", or "guaranteed outcomes" (advertising-law compliance).\n\n';
+  p += '# Output Discipline\n';
+  p += '1. Separate the three parts with "---" and output in full; do not abbreviate.\n';
+  p += '2. For all uncertain real-time information (prices, opening status, booking requirements), give reference ranges and flag [NEEDS MANUAL VERIFICATION]; never invent exact figures.\n';
+  p += '3. If any missing information materially affects design quality, first list the questions you need answered (max 5), then produce a draft based on reasonable assumptions.\n';
+  return p;
 }
 
 function gen(){
   var missing=[];
-  if(!v('dest')) missing.push('目的地');
-  if(!v('days')) missing.push('出行天数');
-  if(!v('age')) missing.push('学生年龄段');
-  if(!v('size')) missing.push('团队规模');
-  if(missing.length){ alert('请补充必填项：'+missing.join('、')); return; }
+  if(!v('dest')) missing.push(t('f_dest'));
+  if(!v('days')) missing.push(t('f_days'));
+  if(!v('age')) missing.push(t('f_age'));
+  if(!v('size')) missing.push(t('f_size'));
+  if(missing.length){ alert(t('alert_missing') + missing.join(lang==='zh'?'、':', ')); return; }
 
-  var p = '';
-  p += '# 角色\n';
-  p += '你是一位有15年经验的国际游学产品总监，精通游学线路研发、成本核算与招生营销。你设计的线路以「课程化、安全可控、成果可外化」著称，服务过数十家游学机构。\n\n';
-
-  p += '# 本次任务\n';
-  p += '请基于以下需求，为一条游学线路输出完整的产品研发三件套（A 行程方案、B 成本报价表、C 招生详情页初稿）。\n\n';
-
-  p += '# 线路需求\n';
-  p += '- 目的地：' + v('dest') + '\n';
-  p += '- 出行天数：' + v('days') + '\n';
-  if(v('when')) p += '- 计划出行时间：' + v('when') + '\n';
-  p += '- 学生年龄段：' + v('age') + '\n';
-  p += '- 团队规模：' + v('size') + '名学生\n';
-  p += '- 线路主题：' + v('theme') + '\n';
-  if(v('from')) p += '- 出发城市：' + v('from') + '\n';
-  if(v('budget')) p += '- 人均预算：' + v('budget') + ' 元\n';
-  if(v('hotel')) p += '- 住宿餐饮标准：' + v('hotel') + '\n';
-  if(v('special')) p += '- 特殊要求：' + v('special') + '\n';
-  if(v('brand')) p += '- 机构与调性：' + v('brand') + '\n';
-  if(v('extra')) p += '- 补充说明：' + v('extra') + '\n';
-  p += '\n';
-
-  p += '# A. 行程方案（逐日）\n';
-  p += '要求：\n';
-  p += '1. 逐日输出：日期/城市/上午/下午/晚上安排，标注每个点的【教育目标】（这一天学生学什么、产出什么）。\n';
-  p += '2. 课程化设计：整条线路要有「前置导入（行前线上课）→ 行程探究（每日任务单/研学手册）→ 成果产出（结营展示/报告/证书）」的完整学习闭环，并在行程中体现。\n';
-  p += '3. 节奏合理：每天核心活动不超过3个，避免打卡式赶场；城际移动日不排重活动；标注每段交通方式与预估车程。\n';
-  p += '4. 适龄匹配：活动内容、步行强度、知识深度须匹配所给年龄段。\n';
-  p += '5. 师资配置建议：给出中方领队、当地导师、生活老师的配比（10–12岁及以下不低于1:8，13岁以上不低于1:10）及分工。\n';
-  p += '6. 安全预案要点：列5–8条针对该目的地与年龄段的安全与应急要点（医疗、走失、饮食、天气、证件）。\n\n';
-
-  p += '# B. 成本报价表\n';
-  p += '要求：\n';
-  p += '1. 用 Markdown 表格输出，类目包括：国际往返机票（如需）、签证及材料服务、境外住宿、餐饮、地接交通、门票及活动、课程及师资、领队及工作人员成本分摊、境外保险、物料及研学手册、其他。\n';
-  p += '2. 每行给出：成本估算区间（元/人）、计价依据说明、以及【需人工核实】标注——凡涉及实时价格（机票、酒店、门票、汇率敏感项）必须标注。\n';
-  p += '3. 汇总：人均总成本区间 → 按毛利率 18%–25% 给出建议零售价 → 给出早鸟价/常规价两档定价建议。\n';
-  p += '4. 若需求中注明某项不含（如不含国际机票），该项单独列参考区间并注明不含在总价内。\n\n';
-
-  p += '# C. 招生详情页初稿\n';
-  p += '要求：\n';
-  p += '1. 结构：主标题+副标题 / 3–4个核心亮点（教育价值导向，不写空洞形容词）/ 行程概览表 / 学生收获（能力+可带走的成果物）/ 安全保障说明 / 费用包含与不包含 / 报名须知（年龄、人数、截止日期、退改规则占位）。\n';
-  p += '2. 文案风格匹配所给机构调性；面向家长阅读场景，回答家长最关心的三个问题：孩子学什么、安不安全、值不值。\n';
-  p += '3. 不使用「最好」「第一」「100%安全」「保证收获」等绝对化用语（广告法合规）。\n\n';
-
-  p += '# 输出纪律\n';
-  p += '1. 三个部分用「---」分隔，完整输出，不要省略。\n';
-  p += '2. 所有不确定的实时信息（价格、开放状态、预约要求）一律给参考区间并标注【需人工核实】，不得编造确切数字。\n';
-  p += '3. 如果某项需求信息不足且影响设计质量，先列出你需要我补充的问题（最多5个），再基于合理假设给出初稿。\n';
-
-  document.getElementById('output').value = p;
+  var d = {
+    dest:v('dest'), days:v('days'), when:v('when'), age:v('age'), size:v('size'),
+    theme:t('th_' + document.getElementById('theme').value),
+    from:v('from'), budget:v('budget'), hotel:v('hotel'),
+    special:v('special'), brand:v('brand'), extra:v('extra')
+  };
+  document.getElementById('output').value = buildPrompt(d);
 }
 
 function copyOut(){
-  var t = document.getElementById('output');
-  if(!t.value){ alert('请先生成主提示词'); return; }
+  var ta = document.getElementById('output');
+  if(!ta.value){ alert(t('alert_nogen')); return; }
   var btn = document.getElementById('copyBtn');
   function ok(){
-    btn.textContent = '已复制 ✓';
+    btn.textContent = t('btn_copied');
     btn.classList.add('copied');
-    document.getElementById('copyHint').innerHTML = '<b>已复制 ✓</b> 现在粘贴到 Kimi / ChatGPT / Claude 发送即可。';
-    setTimeout(function(){ btn.textContent='复制提示词'; btn.classList.remove('copied'); }, 2000);
+    document.getElementById('copyHint').innerHTML = t('hint_copied');
+    setTimeout(function(){ btn.textContent = t('btn_copy'); btn.classList.remove('copied'); }, 2000);
   }
-  t.select();
+  ta.select();
   if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(t.value).then(ok).catch(function(){ document.execCommand('copy'); ok(); });
+    navigator.clipboard.writeText(ta.value).then(ok).catch(function(){ document.execCommand('copy'); ok(); });
   }else{
     document.execCommand('copy'); ok();
   }
 }
+
+applyLang();
 </script>
 </body>
 </html>
